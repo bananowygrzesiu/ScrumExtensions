@@ -1,0 +1,28 @@
+{
+  "name": "Storycards Toaster",
+  "version": "1.0",
+  "description": "",
+  
+  "background": {
+    "scripts": ["scripts/background.js"],
+    "persistent": false
+  },
+  
+	"content_scripts": [{
+	  "matches": ["https://*/*DetailTrackingPage*"],
+      "js": ["scripts/jquery-3.2.1.js", "scripts/detail_tracking_page_parser.js"]
+    }],
+  
+  "page_action":
+  {
+    "default_title": "Storycards Toaster",
+	"default_popup": "html/popup.html",
+	"default_icon": "images/bread.png"
+  },
+  
+  "permissions": [
+    "tabs", "declarativeContent"
+  ],
+
+  "manifest_version": 2
+}
